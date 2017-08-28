@@ -1,6 +1,7 @@
 {
   "name": "2048 - Progressive Web App",
   "short_name": "2048",
+  "description": "This is a fork of the original 2048 web application source. It is upgraded to be a progressive web application and used as a reference application in the Packt Book - Progressive Web Applications By Example",
   "icons": [
     {
       "src": "meta/2048-logo-70x70.png",
@@ -49,7 +50,11 @@
     }
   ],
   "start_url": "/",
-  "display": "standalone",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
   "background_color": "#fff",
-  "theme_color": "#f67c5f"
+  "theme_color": "#ECC400",
+  "lang": "en",
+  "dir": "ltr"
 }
