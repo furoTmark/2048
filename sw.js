@@ -1,4 +1,5 @@
-var cacheList = [
+var version = "1.0",
+    cacheList = [
     "index.html",
     "style/main.css",
     "js/keyboard_input_manager.js",
