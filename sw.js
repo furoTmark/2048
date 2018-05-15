@@ -1,6 +1,7 @@
-var version = "1.0",
+const version = "1.02",
+preCache = "PRECACHE-" + version,
     cacheList = [
-    "index.html",
+    "/",
     "style/main.css",
     "js/keyboard_input_manager.js",
     "js/html_actuator.js",
@@ -17,8 +18,10 @@ self.addEventListener("install", function (event) {
 
     console.log("Installing the service worker!");
 
-    caches.open("PRECACHE")
-        .then(function (cache) {
+    self.skipWaiting();
+
+    caches.open(preCache)
+        .then(cache => {
 
             cache.addAll(cacheList);
 
@@ -28,13 +31,31 @@ self.addEventListener("install", function (event) {
 
 self.addEventListener("activate", function (event) {
 
-    console.log("Activating the service worker!");
+    event.waitUntil(
+
+        caches.keys().then(cacheNames => {
+          cacheNames.forEach(value => {
+    
+            if (value.indexOf(version) < 0) {
+              caches.delete(value);
+            }
+    
+          });
+    
+          console.log("service worker activated");
+    
+          return;
+    
+        })
+    
+      );
 
 });
 
 self.addEventListener("fetch", function (event) {
 
     event.respondWith(
+
         caches.match(event.request)
         .then(function (response) {
 
@@ -47,3 +68,4 @@ self.addEventListener("fetch", function (event) {
     );
 
 });
+
