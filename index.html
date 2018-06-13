@@ -2,8 +2,8 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="utf-8">
-    <base href="/">
+  <meta charset="utf-8">
+  <base href="/">
   <title>2048</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,6 @@
 
 <body>
   <div class="container">
-    <div class="ad2hs-prompt">Add 2048 To Your Homescreen!</div>
     <header class="heading">
       <h1 class="title">2048</h1>
       <div class="scores-container">
@@ -48,7 +47,9 @@
     </header>
 
     <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+      <p class="game-intro">Join the numbers and get to the
+        <strong>2048 tile!</strong>
+      </p>
       <a class="restart-button">New Game</a>
     </div>
 
@@ -94,20 +95,26 @@
     </div>
 
     <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles
-      with the same number touch, they <strong>merge into one!</strong>
+      <strong class="important">How to play:</strong> Use your
+      <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they
+      <strong>merge into one!</strong>
     </p>
     <hr>
     <p>
       <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via
-      <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be
-      used with caution.
+      <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
     </p>
     <hr>
     <p>
-      Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224"
-        target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+      Created by
+      <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on
+      <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to
+      <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
     </p>
+  </div>
+  <div class="ad2hs-prompt bounceInUp">
+    <h1>Add 2048 To Your Homescreen!</h1>
+    <div class="btn btn-premium">Add</div>
   </div>
 
   <script>
@@ -185,17 +192,18 @@
   </script>
 
   <script>
+
     if ('serviceWorker' in navigator) {  
 
       navigator.serviceWorker.register('/sw.js')
         .then(function (registration) {    // Registration was successful
-           
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);  
+             
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);  
 
-      }).catch(function (err) {    // registration failed :(
-           
-        console.log('ServiceWorker registration failed: ', err);  
-      });
+        }).catch(function (err) {    // registration failed :(
+             
+          console.log('ServiceWorker registration failed: ', err);  
+        });
 
     }
   </script>
