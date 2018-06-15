@@ -21,15 +21,15 @@
 
   });
 
-  function showAddToHomeScreen() {
+function showAddToHomeScreen() {
 
-    var a2hsBtn = document.querySelector(".ad2hs-prompt");
+  var a2hsBtn = document.querySelector(".ad2hs-prompt");
 
-    a2hsBtn.style.display = "flex";
+  a2hsBtn.style.display = "flex";
 
-    a2hsBtn.addEventListener("click", addToHomeScreen);
+  a2hsBtn.addEventListener("click", addToHomeScreen);
 
-  }
+}
 
   function addToHomeScreen() {
 
