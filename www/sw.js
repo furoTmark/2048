@@ -1,71 +1,74 @@
-const version = "1.03",
-preCache = "PRECACHE-" + version,
+const version = "1.06",
+    preCache = "PRECACHE-" + version,
     cacheList = [
-    "/",
-    "style/main.css",
-    "js/keyboard_input_manager.js",
-    "js/html_actuator.js",
-    "js/grid.js",
-    "js/tile.js",
-    "js/local_storage_manager.js",
-    "js/game_manager.js",
-    "js/application.js"
-];
+        "/",
+        "style/main.css",
+        "style/bootstrap.min.css",
+        "style/animate.min.css",
+        "style/addtohomescreen.css",
+        "js/keyboard_input_manager.js",
+        "js/html_actuator.js",
+        "js/grid.js",
+        "js/tile.js",
+        "js/addtohomescreen.min.js",
+        "js/local_storage_manager.js",
+        "js/game_manager.js",
+        "js/application.js"
+    ];
 
 /*  Service Worker Event Handlers */
 
-self.addEventListener("install", function (event) {
+self.addEventListener( "install", function ( event ) {
 
-    console.log("Installing the service worker!");
+    console.log( "Installing the service worker!" );
 
     self.skipWaiting();
 
-    caches.open(preCache)
-        .then(cache => {
+    caches.open( preCache )
+        .then( cache => {
 
-            cache.addAll(cacheList);
+            cache.addAll( cacheList );
 
-        });
+        } );
 
-});
+} );
 
-self.addEventListener("activate", function (event) {
+self.addEventListener( "activate", function ( event ) {
 
     event.waitUntil(
 
-        caches.keys().then(cacheNames => {
-          cacheNames.forEach(value => {
-    
-            if (value.indexOf(version) < 0) {
-              caches.delete(value);
-            }
-    
-          });
-    
-          console.log("service worker activated");
-    
-          return;
-    
-        })
-    
-      );
+        caches.keys().then( cacheNames => {
+            cacheNames.forEach( value => {
 
-});
+                if ( value.indexOf( version ) < 0 ) {
+                    caches.delete( value );
+                }
 
-self.addEventListener("fetch", function (event) {
+            } );
+
+            console.log( "service worker activated" );
+
+            return;
+
+        } )
+
+    );
+
+} );
+
+self.addEventListener( "fetch", function ( event ) {
 
     event.respondWith(
 
-        caches.match(event.request)
-        .then(function (response) {
+        caches.match( event.request )
+        .then( function ( response ) {
 
-            if (response) {
+            if ( response ) {
                 return response;
             }
 
-            return fetch(event.request);
-        })
+            return fetch( event.request );
+        } )
     );
 
-});
-
+} );
