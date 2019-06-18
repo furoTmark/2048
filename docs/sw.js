@@ -1,19 +1,19 @@
 const version = "1.07",
     preCache = "PRECACHE-" + version,
     cacheList = [
-        "/",
-        "style/main.css",
-        "style/bootstrap.min.css",
-        "style/animate.min.css",
-        "style/addtohomescreen.css",
-        "js/keyboard_input_manager.js",
-        "js/html_actuator.js",
-        "js/grid.js",
-        "js/tile.js",
-        "js/addtohomescreen.min.js",
-        "js/local_storage_manager.js",
-        "js/game_manager.js",
-        "js/application.js"
+        "2048/",
+        "2048/style/main.css",
+        "2048/style/bootstrap.min.css",
+        "2048/style/animate.min.css",
+        "2048/style/addtohomescreen.css",
+        "2048/js/keyboard_input_manager.js",
+        "2048/js/html_actuator.js",
+        "2048/js/grid.js",
+        "2048/js/tile.js",
+        "2048/js/addtohomescreen.min.js",
+        "2048/js/local_storage_manager.js",
+        "2048/js/game_manager.js",
+        "2048/js/application.js"
     ];
 
 /*  Service Worker Event Handlers */
