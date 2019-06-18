@@ -24,22 +24,22 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <link rel="apple-touch-icon" href="meta/2048-logo-80x80.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="meta/2048-logo-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="meta/2048-logo-180x180.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="meta/2048-logo-167x167.png">
+  <link rel="apple-touch-icon" href="2048/meta/2048-logo-80x80.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="2048/meta/2048-logo-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="2048/meta/2048-logo-180x180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="2048/meta/2048-logo-167x167.png">
 
   <meta name="application-name" content="2048" />
-  <meta name="msapplication-square70x70logo" content="meta/2048-logo-70x70.png" />
-  <meta name="msapplication-square150x150logo" content="meta/2048-logo-152x152.png" />
-  <meta name="msapplication-wide310x150logo" content="meta/2048-logo-310x150.png" />
-  <meta name="msapplication-square310x310logo" content="meta/2048-logo-310x310.png" />
+  <meta name="msapplication-square70x70logo" content="2048/meta/2048-logo-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="2048/meta/2048-logo-152x152.png" />
+  <meta name="msapplication-wide310x150logo" content="2048/meta/2048-logo-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="2048/meta/2048-logo-310x310.png" />
   <meta name="msapplication-TileColor" content="#ECC400" />
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="2048/manifest.json">
 </head>
 
 <body>
@@ -157,19 +157,19 @@
 
     if ( typeof Function.prototype.bind !== "function" ) {
 
-      scripts.unshift( "js/polyfills/bind_polyfill.js" );
+      scripts.unshift("2048/js/polyfills/bind_polyfill.js");
 
     }
 
     if ( "classList" in document.documentElement === false ) {
 
-      scripts.unshift( "js/polyfills/classlist_polyfill.js" );
+      scripts.unshift("2048/js/polyfills/classlist_polyfill.js");
 
     }
 
     if ( !window.requestAnimationFrame ) {
 
-      scripts.unshift( "js/polyfills/animframe_polyfill.js" );
+      scripts.unshift("2048/js/polyfills/animframe_polyfill.js");
 
     }
 
@@ -217,7 +217,7 @@
   <script>
     if ( "serviceWorker" in navigator ) {
 
-      navigator.serviceWorker.register( "/sw.js" )
+      navigator.serviceWorker.register( "2048/sw.js" )
         .then( function ( registration ) { // Registration was successful
 
           console.log( "ServiceWorker registration successful with scope: ", registration.scope );
