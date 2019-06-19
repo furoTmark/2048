@@ -44,12 +44,12 @@
       "type": "image/png"
     },
     {
-      "src": "meta/2048-logo-600x310.png",
+      "src": "/meta/2048-logo-600x310.png",
       "sizes": "600x310",
       "type": "image/png"
     }
   ],
-  "start_url": "/?hs=2349872398472894",
+  "start_url": "/2048/?hs=2349872398472894",
   "scope": "2048/",
   "display": "fullscreen",
   "background_color": "#fff",
