@@ -49,8 +49,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/2048/?hs=2349872398472894",
-  "scope": "/2048/",
+  "start_url": "/2048/",
+  "scope": "/",
   "display": "fullscreen",
   "background_color": "#fff",
   "theme_color": "#ECC400",
