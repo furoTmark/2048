@@ -9,7 +9,7 @@ Made just for fun and to demonstrate how easy it is to be a Progressive Web App 
 
 # Progressive Web Application Development by Example
 
-<a href="https://www.packtpub.com/application-development/progressive-web-application-development-example?utm_source=github&utm_medium=repository&utm_campaign=9781787125421"><img src="https://www.packtpub.com/sites/default/files/B06922_MockupCoverNew.png" alt="Progressive Web Application Development by Example" height="256px" align="right"></a>
+<a target="_blank" rel="noopener" href="https://www.packtpub.com/application-development/progressive-web-application-development-example?utm_source=github&utm_medium=repository&utm_campaign=9781787125421"><img src="https://www.packtpub.com/sites/default/files/B06922_MockupCoverNew.png" alt="Progressive Web Application Development by Example" height="256px" align="right"></a>
 
 This is the code repository for [Progressive Web Application Development by Example](https://www.packtpub.com/application-development/progressive-web-application-development-example?utm_source=github&utm_medium=repository&utm_campaign=9781787125421), published by Packt.
 
