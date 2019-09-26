@@ -30,7 +30,7 @@
     customCriteria: true,
     displayPace: 0,
     customPrompt: {
-      src: "meta/2048-logo-48x48.png"
+      src: "2048/meta/2048-logo-48x48.png"
     }
   } );
 
