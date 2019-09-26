@@ -17,58 +17,40 @@ const version = "1.07",
     ];
 
 /*  Service Worker Event Handlers */
+self.addEventListener("install", function (event) {
 
-self.addEventListener( "install", function ( event ) {
-
-    console.log( "Installing the service worker!" );
+    console.log("Installing the service worker!");
 
     self.skipWaiting();
 
-    caches.open( preCache )
-        .then( cache => {
+    caches.open(preCache)
+        .then(cache => {
+            cache.addAll(cacheList);
+        });
+});
 
-            cache.addAll( cacheList );
-
-        } );
-
-} );
-
-self.addEventListener( "activate", function ( event ) {
-
+self.addEventListener("activate", function (event) {
     event.waitUntil(
-
-        caches.keys().then( cacheNames => {
-            cacheNames.forEach( value => {
-
-                if ( value.indexOf( version ) < 0 ) {
-                    caches.delete( value );
+        caches.keys().then(cacheNames => {
+            cacheNames.forEach(value => {
+                if (value.indexOf(version) < 0) {
+                    caches.delete(value);
                 }
-
-            } );
-
-            console.log( "service worker activated" );
-
+            });
+            console.log("service worker activated");
             return;
-
-        } )
-
+        })
     );
+});
 
-} );
-
-self.addEventListener( "fetch", function ( event ) {
-
+self.addEventListener("fetch", function (event) {
     event.respondWith(
-
-        caches.match( event.request )
-        .then( function ( response ) {
-
-            if ( response ) {
-                return response;
-            }
-
-            return fetch( event.request );
-        } )
+        caches.match(event.request)
+            .then(function (response) {
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
     );
-
-} );
+});
