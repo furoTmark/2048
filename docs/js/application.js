@@ -1,5 +1,4 @@
 "use strict"; //https://love2dev.com/blog/javascript-strict-mode/
-
 ( function () {
 
   // Wait till the browser is ready to render the game (avoids glitches)

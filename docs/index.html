@@ -14,12 +14,12 @@
   <link rel="shortcut icon" href="2048/favicon.ico">
 
   <meta name="apple-mobile-web-app-title" content="2048 PWA">
-
   <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x1096.png"
     media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
   <!-- iPhone 5+ -->
   <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x920.png"
     media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+
   <!-- iPhone, retina -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -156,29 +156,23 @@
       firstScript = document.scripts[ 0 ];
 
     if ( typeof Function.prototype.bind !== "function" ) {
-
       scripts.unshift("2048/js/polyfills/bind_polyfill.js");
 
     }
-
+    
     if ( "classList" in document.documentElement === false ) {
-
       scripts.unshift("2048/js/polyfills/classlist_polyfill.js");
-
     }
 
     if ( !window.requestAnimationFrame ) {
-
       scripts.unshift("2048/js/polyfills/animframe_polyfill.js");
-
     }
 
     // Watch scripts load in IE
     function stateChange() {
       // Execute as many scripts in order as we can
-
       var pendingScript;
-
+      
       while ( pendingScripts[ 0 ] && pendingScripts[ 0 ].readyState == "loaded" ) {
         pendingScript = pendingScripts.shift();
         // avoid future loading events from this script (eg, if src changes)
@@ -186,19 +180,15 @@
         // can"t just appendChild, old IE bug if element isn"t closed
         firstScript.parentNode.insertBefore( pendingScript, firstScript );
       }
-
     }
 
     // loop through our script urls
     while ( src = scripts.shift() ) {
-
       if ( "async" in firstScript ) { // modern browsers
-
         script = document.createElement( "script" );
         script.async = false;
         script.src = src;
         document.body.appendChild( script );
-
       } else if ( firstScript.readyState ) { // IE<10
         // create a script and add it to our todo pile
         script = document.createElement( "script" );
@@ -226,7 +216,6 @@
 
           console.error( "ServiceWorker registration failed: ", err );
         } );
-
     }
   </script>
 
