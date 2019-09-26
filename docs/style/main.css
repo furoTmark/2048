@@ -1,4 +1,5 @@
 @import url(fonts/clear-sans.css);
+
 html,
 body {
   margin: 0;
@@ -34,6 +35,7 @@ h1.title {
     top: 25px;
     opacity: 1;
   }
+
   100% {
     top: -50px;
     opacity: 0;
@@ -45,6 +47,7 @@ h1.title {
     top: 25px;
     opacity: 1;
   }
+
   100% {
     top: -50px;
     opacity: 0;
@@ -64,6 +67,7 @@ h1.title {
 }
 
 @keyframes bounceInUp {
+
   from,
   60%,
   75%,
@@ -71,14 +75,17 @@ h1.title {
   to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
   from {
     opacity: 0;
     transform: translate3d(0, 3000px, 0);
   }
+
   60% {
     opacity: 1;
     transform: translate3d(0, -20px, 0);
   }
+
   75% {
     transform: translate3d(0, 10px, 0);
   }
@@ -86,6 +93,7 @@ h1.title {
   90% {
     transform: translate3d(0, -5px, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -898,6 +906,7 @@ hr {
   .game-container .game-message.game-won a.keep-playing-button {
     display: inline-block;
   }
+
   .game-container .game-message.game-won,
   .game-container .game-message.game-over {
     display: block;
