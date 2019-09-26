@@ -4,16 +4,22 @@
 <head>
   <meta charset="utf-8">
   <base href="/">
-  <title>2048</title>
+  <title>2048 - Progressive Web App</title>
 
-  <link href="2048/style/main.css" rel="stylesheet" type="text/css">
+  <link href="2048/style/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="2048/style/animate.min.css" rel="stylesheet" type="text/css">
+  <link href="2048/style/addtohomescreen.css" rel="stylesheet" type="text/css">
+
+  <link href="2048//style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="2048/favicon.ico">
 
   <meta name="apple-mobile-web-app-title" content="2048 PWA">
-
-  <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x1096.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
   <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="2048/meta/apple-touch-startup-image-640x920.png"
+    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+
   <!-- iPhone, retina -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -101,24 +107,41 @@
     </p>
     <hr>
     <p>
-      <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via
-      <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
+      <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone
+      via
+      <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should
+      be used with caution.
     </p>
     <hr>
     <p>
       Created by
       <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on
-      <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to
+      <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and
+      conceptually similar to
       <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
     </p>
   </div>
-  <div class="ad2hs-prompt bounceInUp">
-    <h1>Add 2048 To Your Homescreen!</h1>
-    <div class="btn btn-premium">Add</div>
+  <div class="ath-container banner-bottom-center">
+    <div class="ath-banner">
+      <div class="ath-banner-cell">
+        <img src="meta/2048-logo-48x48.png" alt="PWA" class="ath-prompt-logo">
+      </div>
+      <div class="ath-banner-title">
+        <p>Install 2048?</p>
+      </div>
+      <div class="ath-banner-cell">
+        <button class="btn btn-cancel btn-link">Not Now</button>
+      </div>
+      <div class="ath-banner-cell">
+        <button class="btn btn-install btn-success">Install</button>
+      </div>
+
+    </div>
   </div>
 
   <script>
     var scripts = [
+        "2048/js/addtohomescreen.min.js",
         "2048/js/keyboard_input_manager.js",
         "2048/js/html_actuator.js",
         "2048/js/grid.js",
@@ -130,81 +153,69 @@
       src,
       script,
       pendingScripts = [],
-      firstScript = document.scripts[0];
+      firstScript = document.scripts[ 0 ];
 
-    if (typeof Function.prototype.bind !== "function") {
-
+    if ( typeof Function.prototype.bind !== "function" ) {
       scripts.unshift("2048/js/polyfills/bind_polyfill.js");
 
     }
-
-    if ("classList" in document.documentElement === false) {
-
+    
+    if ( "classList" in document.documentElement === false ) {
       scripts.unshift("2048/js/polyfills/classlist_polyfill.js");
-
     }
 
-    if (!window.requestAnimationFrame) {
-
+    if ( !window.requestAnimationFrame ) {
       scripts.unshift("2048/js/polyfills/animframe_polyfill.js");
-
     }
 
     // Watch scripts load in IE
     function stateChange() {
       // Execute as many scripts in order as we can
-
       var pendingScript;
-
-      while (pendingScripts[0] && pendingScripts[0].readyState == 'loaded') {
+      
+      while ( pendingScripts[ 0 ] && pendingScripts[ 0 ].readyState == "loaded" ) {
         pendingScript = pendingScripts.shift();
         // avoid future loading events from this script (eg, if src changes)
         pendingScript.onreadystatechange = null;
-        // can't just appendChild, old IE bug if element isn't closed
-        firstScript.parentNode.insertBefore(pendingScript, firstScript);
+        // can"t just appendChild, old IE bug if element isn"t closed
+        firstScript.parentNode.insertBefore( pendingScript, firstScript );
       }
-
     }
 
     // loop through our script urls
-    while (src = scripts.shift()) {
-
-      if ('async' in firstScript) { // modern browsers
-
-        script = document.createElement('script');
+    while ( src = scripts.shift() ) {
+      if ( "async" in firstScript ) { // modern browsers
+        script = document.createElement( "script" );
         script.async = false;
         script.src = src;
-        document.body.appendChild(script);
-
-      } else if (firstScript.readyState) { // IE<10
+        document.body.appendChild( script );
+      } else if ( firstScript.readyState ) { // IE<10
         // create a script and add it to our todo pile
-        script = document.createElement('script');
-        pendingScripts.push(script);
+        script = document.createElement( "script" );
+        pendingScripts.push( script );
         // listen for state changes
         script.onreadystatechange = stateChange;
         // must set src AFTER adding onreadystatechange listener
         // else we’ll miss the loaded event for cached scripts
         script.src = src;
       } else { // fall back to defer
-        document.write('<script src="' + src + '" defer></' + 'script>');
+        document.write( "<script src=" + src + " defer></" + "script>" );
       }
     }
   </script>
 
   <script>
+    if ( "serviceWorker" in navigator ) {
 
-    if ('serviceWorker' in navigator) {  
+      navigator.serviceWorker.register( "2048/sw.js" )
+        .then( function ( registration ) { // Registration was successful
 
-      navigator.serviceWorker.register('2048/sw.js')
-        .then(function (registration) {    // Registration was successful
-             
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);  
+          console.log( "ServiceWorker registration successful with scope: ", registration.scope );
 
-        }).catch(function (err) {    // registration failed :(
-             
-          console.log('ServiceWorker registration failed: ', err);  
-        });
+        } ).catch( function ( err ) { // registration failed :(
 
+          console.error( "ServiceWorker registration failed: ", err );
+        } );
     }
   </script>
 
