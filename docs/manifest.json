@@ -56,7 +56,7 @@
     }
   ],
   "start_url": "/2048/",
-  "scope": "/",
+  "scope": "/2048/",
   "display": "fullscreen",
   "background_color": "#fff",
   "theme_color": "#ECC400",
