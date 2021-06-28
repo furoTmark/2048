@@ -47,6 +47,12 @@
       "src": "/meta/2048-logo-600x310.png",
       "sizes": "600x310",
       "type": "image/png"
+    },
+    {
+      "src": "/meta/2048-logo-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/2048/",
