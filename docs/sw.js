@@ -48,7 +48,19 @@ self.addEventListener("fetch", function (event) {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request);
+                return fetchAndUpdate(event.request);
             })
     );
 });
+
+function fetchAndUpdate(request) {
+    return fetch(request).then(function (res) {
+        if (res) {
+            return caches.open(version).then(function (cache) {
+                return cache.put(request, res.clone()).then(function () {
+                    return res;
+                });
+            });
+        }
+    })
+}
