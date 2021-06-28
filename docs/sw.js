@@ -1,4 +1,4 @@
-const version = "1.07",
+const version = "1.08",
     preCache = "PRECACHE-" + version,
     cacheList = [
         "/2048",
@@ -56,7 +56,7 @@ self.addEventListener("fetch", function (event) {
 function fetchAndUpdate(request) {
     return fetch(request).then(function (res) {
         if (res) {
-            return caches.open(version).then(function (cache) {
+            return caches.open(preCache).then(function (cache) {
                 return cache.put(request, res.clone()).then(function () {
                     return res;
                 });
