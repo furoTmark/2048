@@ -55,8 +55,8 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/2048/",
-  "scope": "/2048/",
+  "start_url": "https://furotmark.github.io/2048/",
+  "scope": "https://furotmark.github.io/2048/",
   "display": "fullscreen",
   "background_color": "#fff",
   "theme_color": "#ECC400",
